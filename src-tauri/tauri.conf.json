@@ -1,0 +1,79 @@
+{
+  "build": {
+    "distDir": "../dist",
+    "beforeDevCommand": "npm run dev",
+    "devPath": "http://localhost:8124",
+    "beforeBuildCommand": "npm run build"
+  },
+  "package": {
+    "version": "1.0.0",
+    "productName": "chat-assistant"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "clipboard": {
+        "all": true,
+        "readText": true,
+        "writeText": true
+      },
+      "shell": {
+        "all": false,
+        "open": true
+      },
+      "dialog": {
+        "all": true
+      },
+      "window": {
+        "all": true
+      },
+      "globalShortcut": {
+        "all": true
+      }
+    },
+    "bundle": {
+      "active": false,
+      "targets": "msi",
+      "category": "Utility",
+      "shortDescription": "瓜皮助手",
+      "identifier": "com.luckin-peng.assistant",
+      "copyright": "Copyright © 2024 Luckin Peng. All rights reserved.",
+      "icon": [
+        "icons/icon.ico",
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png"
+      ],
+      "windows": {
+        "webviewInstallMode": { 
+          "type": "downloadBootstrapper", 
+          "silent": true
+        },
+        "wix": {
+          "language": "zh-CN"
+        }
+      }
+    },
+    "security": {
+      "csp": null
+    }
+    ,"windows": [{
+      "width": 480,
+      "height": 120,
+      "center": true,
+      "visible": false,
+      "resizable": false,
+      "transparent": true,
+      "skipTaskbar": true,
+      "label": "toastWnd",
+      "alwaysOnTop": true,
+      "decorations": false,
+      "url": "./toast.html"
+    }],
+    "systemTray": {
+      "title": "瓜皮助手",
+      "iconAsTemplate": false,
+      "iconPath": "./icons/128x128.png"
+    }
+  }
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>About</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h3>瓜皮助手<span class="version">(版本: 1.0.0)</span></h3>
+    <p>作者: luckin.peng@proton.me</p>
+    <p>主页：<a href="https://github.com/luckin-peng/chat-assistant" target="_blank">https://github.com/luckin-peng/chat-assistant</a></p>
+    <p>瓜皮助手是一个使用人工智能技术和无障碍技术的机器人，会自动结合上下文产生建议的聊天消息，帮助您节约时间、提高效率。瓜皮助手基于Rust和Tauri开发。</p>
+    <div class="ops"><div id="op">确 定</div></div>
+    <script type="module">
+        import { getCurrent } from '@tauri-apps/api/window';
+        document.oncontextmenu = () => false;
+        document.getElementById('op').addEventListener('click', () => {
+            getCurrent().close();
+        });
+    </script>
+</body>
+
+<style scoped>
+    html {
+        margin: 0;
+        padding: 0;
+        color: #303030;
+        overflow: hidden;
+        line-height: 150%;
+        touch-action: none;
+    }
+
+    body {
+        margin: 0;
+        padding: 0 0.5rem;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    a:visited {
+        color: blue;
+    }
+
+
+    h3 {
+        display: flex;
+        user-select: none;
+        align-items: baseline;
+        margin: 0 0 0.25rem 0;
+    }
+
+    span {
+        font-size: 14px;
+        font-weight: bold;
+        margin-left: 0.25rem;
+    }
+
+    p {
+        margin: 0;
+        font-size: 14px;
+        line-height: 150%;
+        padding: 0.125rem 0;
+    }
+
+    .ops {
+        display: flex;
+        user-select: none;
+        padding: 0 0.25rem;
+        margin-top: 0.75rem;
+        justify-content: end;
+    }
+
+    .ops #op {
+        cursor: pointer;
+        color: #FFFFFF;
+        margin-left: 1rem;
+        border-radius: 6px;
+        box-sizing: border-box;
+        padding: 0.25rem 2.5rem;
+        background-color: #A0A0A0;
+    }
+
+    .ops #op:hover {
+        background-color: #07C160;
+    }
+</style>
+</html>
